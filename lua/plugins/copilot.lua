@@ -1,9 +1,16 @@
--- ~/.config/nvim/lua/plugins/copilot.lua
 return {
   "zbirenbaum/copilot.lua",
   event = "InsertEnter",
-  config = function()
-    require("copilot").setup({})
-  end,
+  cmd = "Copilot",
+  build = ":Copilot auth",
+  opts = {
+    suggestion = { enabled = true },
+    panel = { enabled = true },
+    filetypes = {
+      markdown = true,
+      help = false,
+      gitcommit = true,
+      gitrebase = true,
+    },
+  },
 }
-
